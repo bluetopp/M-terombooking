@@ -11,18 +11,12 @@ namespace MøteromBooking2
 
     public static class DatabaseManager
     {
-        //Definerer klassefelt
 
         static MySqlConnection conn = null;
         static MySqlCommand cmd;
         static MySqlCommandBuilder cb;
         static MySqlDataAdapter da;
         static DataSet ds;
-
-        //Open tar imot paramtere for å starte en tilkobling
-        //mot databasen
-        //Så hver gang vi skal til databasen så kaller vi
-        //denne metoden
 
         public static void Open(string server, string port, string database, string username, string password)
         {
@@ -54,8 +48,6 @@ namespace MøteromBooking2
 
         }
 
-        //Metoden under avslutter databasetilkoblingen
-
         public static void Close()
         {
 
@@ -70,10 +62,6 @@ namespace MøteromBooking2
             }
 
         }
-
-        //Query metoden sjekker først om det er en tilkobling
-        //mot databasen, og vil så returnere et resultat tilbake
-        //som vi kaller for "ds" variabelen
 
         public static DataSet Query(string sql)
         {
@@ -95,12 +83,6 @@ namespace MøteromBooking2
             return ds;
 
         }
-
-        //Metoden NonQuery handler hovedsakelig om å sjekke
-        //om "affectedrows" som kommer tilbake er mindre eller lik 0
-        //Hvis vi får 1 eller større tilbake, så betyr det at spørringen
-        //gikk igjennom. Hvis vi får 0 eller mindre (kan få -1 osv) tilbake
-        //så gikk ikke spørringen igjennom til databasen
 
 		public static bool NonQuery(string sql) {
 

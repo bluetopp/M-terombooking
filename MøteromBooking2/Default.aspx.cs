@@ -82,8 +82,6 @@ namespace MøteromBooking2
 
             dataString += "&dato=" + dato.Text + "&fratid=" + fratid.Text + "&tiltid=" + tiltid.Text;
 
-            //Send med URL'en til neste side
-            //Du kan se i URL'en på nettsiden at den blir mye større
             Response.Redirect("Booking.aspx?" + dataString);
 
         }

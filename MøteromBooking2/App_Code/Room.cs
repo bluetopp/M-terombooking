@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace MøteromBooking2
 {
-    //Denne klassefilen er kun en datastruktur
-    //for å inneholde data som vi henter fra databasen
 
 	public class Room
 	{

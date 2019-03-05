@@ -28,7 +28,7 @@
         Romtype        
         <asp:TextBox ID="romtypeValgt" AutoPostBack="false" Text="Ingen romtype valgt" runat="Server" required></asp:TextBox>
         <br />
-        <asp:Button ID="Button1" Text="Boom møterom!" OnClick="SendBooking" runat="server" /><br /><br />      
+        <asp:Button ID="Button1" Text="Book møterom!" OnClick="SendBooking" runat="server" /><br /><br />      
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>$(function () { $( "#<%= datoValgt.ClientID %>" ).datepicker({ minDate: 0, dayNamesMin: [ "Sø", "Ma", "Ti", "On", "To", "Fr", "Lø" ], firstDay: 1, dateFormat: 'dd/mm/yy', orientation: "bottom" }); });</script>

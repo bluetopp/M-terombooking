@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace MøteromBooking2
 {
-    //Dette lille nedenforher er en datastruktur
-    //Det er bare variabler
 
 	public struct TypeCount {
         public int ID;
@@ -57,9 +55,6 @@ namespace MøteromBooking2
                 return null;
             }
 
-            //Hvis vi får noe tilbake, så looper vi det vi
-            //finner og legger det i listen
-
             List<Bookinger> bookings = new List<Bookinger>();
             int bookingID;
             int romID;
@@ -84,32 +79,6 @@ namespace MøteromBooking2
             return bookings;
         }
 
-
-
-
-        public static bool IsRoomOccupiedForPeriod(int roomID, string fromDate, string toDate)
-		{
-            //Denne metoden sjekker om rommet er okkupert
-            //for en viss periode.
-
-			DataSet result = DatabaseManager.Query
-				(
-				"SELECT romID FROM booking WHERE tildato >= CURDATE() AND romID = " + roomID + " AND (fradato <= '" + toDate + "') AND ('" + fromDate + "' <= tildato);"
-				);
-
-			if (result == null)
-			{
-				Console.WriteLine("BookingData.IsRoomOccupiedForPeriod: Datasettet er tomt");
-				return true;
-			}
-
-			return (result.Tables[0].Rows.Count == 0) ? false : true;
-		}
-
-        //Metoden under blir blant annet brukt på hovedsiden
-        //for å sjekke om rommet er tilgjengelig innenfor en viss
-        //periode. Vi sender en spørring til databasen og får
-        //returnert dette tilbake i en liste
 		public static List<TypeCount> GetAvailableRoomsForPeriod(string date, string fratid, string tiltid)
 		{
 
@@ -129,10 +98,6 @@ namespace MøteromBooking2
             int numberOfRooms;
             int roomID;
 
-			// Lista inneholder noe jeg har kalt TypeCount, for å inneholde romtype og antall av dem
-			// TypeCount blir definert på toppen av denne fila, er noe som heter struct
-			// struct er nesten det samme som en klasse/objekt, kan bare ikke inneholder funksjoner og sånt
-			// hadde ikke trengt å bruke det men du får leve med det nå
 			List<TypeCount> typeCountList = new List<TypeCount>(); 
 
 			foreach (DataRow row in result.Tables["result"].Rows)

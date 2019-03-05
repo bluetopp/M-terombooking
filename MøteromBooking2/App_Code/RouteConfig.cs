@@ -6,7 +6,6 @@ using Microsoft.AspNet.FriendlyUrls;
 
 namespace MøteromBooking2
 {
-    //NB! Auto generert fra template!
     public static class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
